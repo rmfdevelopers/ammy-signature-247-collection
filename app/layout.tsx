@@ -1,32 +1,27 @@
-import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
-import "./globals.css";
+import { Cormorant_Garamond, Outfit } from 'next/font/google';
+import './globals.css';
 
-const heading = Playfair_Display({ 
-  subsets: ["latin"], 
-  variable: "--font-heading",
-  weight: ["400", "700", "900"] 
+const heading = Cormorant_Garamond({ 
+  subsets: ['latin'], 
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-heading' 
 });
 
 const body = Outfit({ 
-  subsets: ["latin"], 
-  variable: "--font-body",
-  weight: ["300", "400", "600"] 
+  subsets: ['latin'], 
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-body' 
 });
 
-export const metadata: Metadata = {
-  title: "Ammy Signature 24/7 Collection | The Art of Regal Headwear",
-  description: "Modern Afro-luxury headwear for the contemporary woman. From bespoke autogele to statement fascinators.",
+export const metadata = {
+  title: 'Ammy Signature 24/7 Collection',
+  description: 'Exquisite Crowns for the Modern Queen',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scrollbar-hide">
-      <body className={`${heading.variable} ${body.variable} font-sans`}>
+    <html lang="en">
+      <body className={`${heading.variable} ${body.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
